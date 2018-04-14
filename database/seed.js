@@ -5,7 +5,7 @@ const {Listing} = require('./Listing.js');
 
 const fakeListings = []
 
-for (var i = 0; i < 100; i++) {
+for (var i = 1; i < 101; i++) {
   let listing = {
     _id: i,
     adult_price: faker.commerce.price(100, 400),
