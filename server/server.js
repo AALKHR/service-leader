@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '/../client/dist'));
 
+// app.get('/reservation/:listingId')
+
 app.listen(port, () => {
   console.log(`connected to port ${port}`);
 });

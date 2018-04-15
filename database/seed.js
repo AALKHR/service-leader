@@ -7,7 +7,7 @@ const fakeListings = []
 
 for (var i = 0; i < 100; i++) {
   let listing = {
-    _id: i,
+    listingId: i,
     adult_price: faker.commerce.price(100, 400),
     child_price: faker.commerce.price(25, 75),
     cleaning_fee: faker.commerce.price(0, 50),
