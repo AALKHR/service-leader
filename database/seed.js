@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const {db} = require('./index.js');
 const {Listing} = require('./Listing.js');
 
-const fakeListings = []
+const sampleData = []
 
 for (var i = 0; i < 100; i++) {
   let listing = {
