@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const {db} = require('./index.js');
 const {Listing} = require('./Listing.js');
 
-const fakeListings = []
+const sampleData = []
 
 for (var i = 1; i < 101; i++) {
   let listing = {
-    _id: i,
+    listingId: i,
     adult_price: faker.commerce.price(100, 400),
     child_price: faker.commerce.price(25, 75),
     cleaning_fee: faker.commerce.price(0, 50),

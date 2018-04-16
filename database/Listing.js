@@ -3,7 +3,7 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const listingSchema = new mongoose.Schema({
-  _id: Number,
+  listingId: Number,
   adult_price: Number,
   child_price: Number,
   cleaning_fee: Number,
@@ -13,6 +13,11 @@ const listingSchema = new mongoose.Schema({
 });
 
 const Listing = mongoose.model('Listing', listingSchema);
+
+module.exports.getListing = function(listingId, callback) {
+  Listing.findOne({listingId: `${listingId}`}).
+  exec(callback);
+}
 
 module.exports.Listing = Listing;
 
