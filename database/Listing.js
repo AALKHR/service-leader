@@ -19,5 +19,10 @@ module.exports.getListing = function(listingId, callback) {
   exec(callback);
 }
 
+module.exports.updateListing = function(listingId, dates, callback) {
+  Listing.findOneAndUpdate({listingId: `${listingId}`}, {$push: {booked_dates: dates}}).
+  exec(callback);
+}
+
 module.exports.Listing = Listing;
 

@@ -15,13 +15,25 @@ app.get('/reservation/:listingId', function(req, res) {
   Listing.getListing(req.params.listingId, function(error, data) {
     if (error) {
       res.status(500);
-      res.error(error);
+      res.send(error);
     } else {
       console.log(data);
       res.send(data);
     }
   });
 });
+
+app.post('/reservation/:listingId', function(req, res) {
+  console.log(req.body);
+  Listing.updateListing(req.params.listingId, req.body.dates, function(error, data) {
+    if (error) {
+      res.status(500);
+      res.send(error);
+    } else {
+      res.send(data);
+    }
+  });
+})
 
 app.listen(port, () => {
   console.log(`connected to port ${port}`);
