@@ -19,17 +19,32 @@
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "jquery": "^3.3.1",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.14",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "npm": "^5.8.0",
+    "react": "^16.3.2",
+    "react-dates": "^16.6.1",
+    "react-dom": "^16.3.2",
+    "react-with-styles": "^3.1.1"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "jest": "^22.4.3",
+    "jest-enzyme": "^6.0.0",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "unmockedModulePathPatterns": [
+      "react",
+      "enzyme",
+      "jest-enzyme"
+    ]
   }
 }

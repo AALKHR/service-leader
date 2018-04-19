@@ -24,7 +24,7 @@ app.get('/reservation/:listingId', function(req, res) {
 });
 
 app.post('/reservation/:listingId', function(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   Listing.updateListing(req.params.listingId, req.body.dates, function(error, data) {
     if (error) {
       res.status(500);
