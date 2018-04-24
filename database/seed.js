@@ -11,7 +11,8 @@ for (var i = 1; i < 101; i++) {
     adult_price: faker.commerce.price(100, 400),
     child_price: faker.commerce.price(25, 75),
     cleaning_fee: faker.commerce.price(0, 50),
-    review_rating: faker.random.number(5) + faker.random.number(0.9),
+    review_rating: (faker.random.number(4) + (faker.random.number(10) * 0.1)),
+    reviews: faker.random.number(500),
     discount: faker.random.boolean(),
     booked_dates: [faker.date.recent(1), faker.date.recent(2)]
   }
