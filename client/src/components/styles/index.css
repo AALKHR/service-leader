@@ -1,6 +1,6 @@
 .Reservation {
   box-sizing: border-box;
-  width: 50%;
+  width: 30%;
   border: .5px solid lightgray;
   float: right;
   margin: 10;
