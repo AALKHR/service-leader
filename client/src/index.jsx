@@ -69,7 +69,7 @@ class App extends React.Component {
     let adultGuests = this.state.guestsAdult;
     let childGuests = this.state.guestsChildren;
     return (
-      <div>
+      <div className={styles.Reservation}>
         <TotalPrice data={data} guestsAdult={adultGuests} guestsChildren={childGuests}/>
         <Reviews data={data}/>
         <hr></hr>
