@@ -8,6 +8,7 @@ const listingSchema = new mongoose.Schema({
   child_price: Number,
   cleaning_fee: Number,
   review_rating: Number,
+  reviews: Number,
   discount: Boolean,
   booked_dates: Array
 });

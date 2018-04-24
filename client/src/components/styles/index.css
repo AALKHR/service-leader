@@ -1,0 +1,17 @@
+body {
+  box-sizing: border-box;
+  width: 50%;
+  border: .5px solid lightgray;
+  float: right;
+  margin: 10;
+  padding: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.Book {
+  background-color: #fd5c63;
+  color: white;
+  padding: 16px 64px;
+  border-radius: 4px;
+  font-size: 17px;
+}

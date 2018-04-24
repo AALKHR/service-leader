@@ -1,0 +1,22 @@
+.GuestList {
+  border: .5px solid lightgray;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.Close {
+  color:rgb(0,132,137);
+  margin-left:auto; 
+  margin-right:0;
+}
+.onhover {
+  text-decoration: underline;
+  color:rgb(0,132,137);
+  cursor: pointer;
+  margin-left:auto; 
+  margin-right:0;
+}
+
+.button {
+  float: right;
+}
