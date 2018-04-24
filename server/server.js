@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use(express.static(__dirname + '/../client/dist'));
 
-app.get('http://127.0.0.1:3001/reservation/:listingId', function(req, res) {
+app.get('/reservation/:listingId', function(req, res) {
   Listing.getListing(req.params.listingId, function(error, data) {
     if (error) {
       res.status(500);
@@ -24,7 +24,7 @@ app.get('http://127.0.0.1:3001/reservation/:listingId', function(req, res) {
   });
 });
 
-app.post('http://127.0.0.1:3001/reservation/:listingId', function(req, res) {
+app.post('/reservation/:listingId', function(req, res) {
   // console.log(req.body);
   Listing.updateListing(req.params.listingId, req.body.dates, function(error, data) {
     if (error) {

@@ -29,7 +29,7 @@ class App extends React.Component {
 
   getListing(listingNumber) {
     let current = this;
-    axios.get(`/reservation/${listingNumber}`)
+    axios.get(`http://127.0.0.1:3001/reservation/${listingNumber}`)
     .then((response) => {
       console.log('Data received:', response.data);
       this.setState({ data: response.data});
