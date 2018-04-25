@@ -12,6 +12,7 @@ class Calendar extends React.Component {
       focusedInput: null,
     };
   }
+
   render() {
     return (
       <div className="Calendar">
@@ -24,7 +25,7 @@ class Calendar extends React.Component {
             endDateId="endDate"
             startDate={this.state.startDate}
             endDate={this.state.endDate}
-            onDatesChange={({ startDate, endDate }) => { this.setState({ startDate, endDate }) }}
+            onDatesChange={({ startDate, endDate }) => { this.setState({ startDate, endDate }); this.props.dateRange(startDate, endDate)}}
             focusedInput={this.state.focusedInput}
             onFocusChange={(focusedInput) => { this.setState({ focusedInput }) }}
             />

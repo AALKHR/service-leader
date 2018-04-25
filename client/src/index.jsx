@@ -18,7 +18,8 @@ class App extends React.Component {
       data: { "booked_dates": [""], "_id": "", "listingId": "", "adult_price": 0, "child_price": 0, "cleaning_fee": 0, "review_rating": 0, "reviews": 0, "discount": false, "__v": 0 },
       guestList: false,
       guestsAdult: 1,
-      guestsChildren: 0
+      guestsChildren: 0,
+      nights: 0
     }
 
   }
@@ -64,6 +65,16 @@ class App extends React.Component {
     }
   }
 
+  dateRange(startDate, endDate) {
+    if (startDate && endDate) {
+      let start = String(startDate._d).split(' ')[2]
+      let end = String(endDate._d).split(' ')[2]
+      this.setState({nights: end - start});
+    } else {
+      this.setState({nights: 0});
+    }
+  }
+
   render() {
     let data = this.state.data;
     let adultGuests = this.state.guestsAdult;
@@ -73,10 +84,10 @@ class App extends React.Component {
         <TotalPrice data={data} guestsAdult={adultGuests} guestsChildren={childGuests}/>
         <Reviews data={data}/>
         <hr></hr>
-        <Calendar />
+        <Calendar dateRange={this.dateRange.bind(this)}/>
         <Guests guestList={this.renderGuests.bind(this)} guestsAdult={adultGuests} guestsChildren={childGuests}/>
         <GuestList isClicked={this.state.guestList} guestList={this.renderGuests.bind(this)} changeGuests={this.changeGuests.bind(this)}/>
-        <IndividualPrice data={data} guestsAdult={adultGuests} guestsChildren={childGuests}/>
+        <IndividualPrice data={data} guestsAdult={adultGuests} guestsChildren={childGuests} nights={this.state.nights}/>
         <button className={styles.Book}>Book</button>
       </div>
     )

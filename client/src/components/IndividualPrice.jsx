@@ -7,7 +7,7 @@ class IndividualPrice extends React.Component {
 
     this.state = {
       data: [],
-      nights: 1
+      nights: 0
     }
   }
 
@@ -17,20 +17,25 @@ class IndividualPrice extends React.Component {
   }
 
   render() {
+    this.state.nights = this.props.nights;
     let totalAmount = this.totalAmount();
     let serviceFee = Math.round(this.props.data.adult_price * .07);
-    return (
-      <div>
-        <div><span>${totalAmount} x {this.state.nights} nights</span><span className={styles.price}>${this.state.nights * totalAmount}</span></div>
-        <hr></hr>
-        <div><span>Cleaning fee</span><span className={styles.price}>${this.props.data.cleaning_fee}</span></div>
-        <hr></hr>
-        <div><span>Service fee</span><span className={styles.price}>${serviceFee}</span></div>
-        <hr></hr>
-        <div><span>Total</span><span className={styles.price}>${totalAmount + this.props.data.cleaning_fee + serviceFee}</span></div>
-        <br></br>
-      </div>
-    )
+    if (this.state.nights > 0) {
+      return (
+        <div>
+          <div><span>${totalAmount} x {this.state.nights} nights</span><span className={styles.price}>${this.state.nights * totalAmount}</span></div>
+          <hr></hr>
+          <div><span>Cleaning fee</span><span className={styles.price}>${this.props.data.cleaning_fee}</span></div>
+          <hr></hr>
+          <div><span>Service fee</span><span className={styles.price}>${serviceFee}</span></div>
+          <hr></hr>
+          <div><span>Total</span><span className={styles.price}>${totalAmount + this.props.data.cleaning_fee + serviceFee}</span></div>
+          <br></br>
+        </div>
+      )
+    } else {
+      return null;
+    }
   }
 }
 

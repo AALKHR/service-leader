@@ -3,7 +3,8 @@
   width: 35%;
   border: .5px solid lightgray;
   float: right;
-  margin: 10;
+  margin-top: 20px;
+  margin-right: 60px;
   padding: 25px;
   font-family: 'Montserrat', sans-serif;
 }
