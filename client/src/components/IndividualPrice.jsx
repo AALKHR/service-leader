@@ -29,7 +29,7 @@ class IndividualPrice extends React.Component {
           <hr></hr>
           <div><span>Service fee</span><span className={styles.price}>${serviceFee}</span></div>
           <hr></hr>
-          <div><span>Total</span><span className={styles.price}>${totalAmount + this.props.data.cleaning_fee + serviceFee}</span></div>
+          <div><span>Total</span><span className={styles.price}>${totalAmount*this.state.nights + this.props.data.cleaning_fee + serviceFee}</span></div>
           <br></br>
         </div>
       )
