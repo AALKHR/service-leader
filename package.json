@@ -32,7 +32,7 @@
     "react-dates": "^16.6.1",
     "react-dom": "^16.3.2",
     "react-star-ratings": "^2.2.0",
-    "redis": "^2.8.0",
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
