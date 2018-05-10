@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/IndividualPrice.css';
+import './styles/IndividualPrice.css';
 
 class IndividualPrice extends React.Component {
   constructor(props) {
@@ -23,13 +23,13 @@ class IndividualPrice extends React.Component {
     if (this.state.nights > 0) {
       return (
         <div>
-          <div><span>${totalAmount} x {this.state.nights} nights</span><span className={styles.price}>${this.state.nights * totalAmount}</span></div>
+          <div><span>${totalAmount} x {this.state.nights} nights</span><span className='price'>${this.state.nights * totalAmount}</span></div>
           <hr></hr>
-          <div><span>Cleaning fee</span><span className={styles.price}>${this.props.data.cleaning_fee}</span></div>
+          <div><span>Cleaning fee</span><span className='price'>${this.props.data.cleaning_fee}</span></div>
           <hr></hr>
-          <div><span>Service fee</span><span className={styles.price}>${serviceFee}</span></div>
+          <div><span>Service fee</span><span className='price'>${serviceFee}</span></div>
           <hr></hr>
-          <div><span>Total</span><span className={styles.price}>${totalAmount*this.state.nights + this.props.data.cleaning_fee + serviceFee}</span></div>
+          <div><span>Total</span><span className='price'>${totalAmount*this.state.nights + this.props.data.cleaning_fee + serviceFee}</span></div>
           <br></br>
         </div>
       )

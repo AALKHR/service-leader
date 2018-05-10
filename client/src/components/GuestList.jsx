@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/GuestList.css';
+import './styles/GuestList.css';
 
 class GuestList extends React.Component {
   constructor(props) {
@@ -71,13 +71,13 @@ class GuestList extends React.Component {
 
 
   render() {
-    const hoverClose = this.state.isHovered ? styles.onhover:styles.Close;
+    const hoverClose = this.state.isHovered ? 'onhover':'Close';
     if (this.props.isClicked) {
       return (
-        <div className={styles.GuestList}>
-          <div>Adults<button className={styles.button} onClick={this.addAdult}>+</button><span className={styles.button}>&nbsp;{this.state.adults}&nbsp; </span> <button className={styles.button} onClick={this.subtractAdult}>-</button></div>
-          <div>Children<button className={styles.button} onClick={this.addChild}>+</button> <span className={styles.button}>&nbsp;{this.state.children}&nbsp; </span> <button className={styles.button} onClick={this.subtractChild}>-</button></div>
-          <div>Infants<button className={styles.button} onClick={this.addInfant}>+</button> <span className={styles.button}>&nbsp;{this.state.infants}&nbsp; </span> <button className={styles.button} onClick={this.subtractInfant}>-</button></div>
+        <div className='GuestList'>
+          <div>Adults<button className='button' onClick={this.addAdult}>+</button><span className='button'>&nbsp;{this.state.adults}&nbsp; </span> <button className='button' onClick={this.subtractAdult}>-</button></div>
+          <div>Children<button className='button' onClick={this.addChild}>+</button> <span className='button'>&nbsp;{this.state.children}&nbsp; </span> <button className='button' onClick={this.subtractChild}>-</button></div>
+          <div>Infants<button className='button' onClick={this.addInfant}>+</button> <span className='button'>&nbsp;{this.state.infants}&nbsp; </span> <button className='button' onClick={this.subtractInfant}>-</button></div>
           <div><span className={hoverClose} onMouseEnter={this.hover.bind(this)} onMouseLeave={this.hover.bind(this)} onClick={this.onClick.bind(this)}>Close</span></div>
         </div>
       )

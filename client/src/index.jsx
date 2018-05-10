@@ -8,7 +8,7 @@ import Reviews from './components/Reviews.jsx';
 import TotalPrice from './components/TotalPrice.jsx';
 import IndividualPrice from './components/IndividualPrice.jsx';
 import GuestList from './components/GuestList.jsx'
-import styles from './components/styles/index.css';
+import './components/styles/index.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class App extends React.Component {
 
   getListing(listingNumber) {
     let current = this;
-    axios.get(`http://127.0.0.1:3001/reservation/${listingNumber}`)
+    axios.get(`http://127.0.0.1:3009/reservation/${listingNumber}`)
     .then((response) => {
       console.log('Data received:', response.data);
       this.setState({ data: response.data});
@@ -80,7 +80,7 @@ class App extends React.Component {
     let adultGuests = this.state.guestsAdult;
     let childGuests = this.state.guestsChildren;
     return (
-      <div className={styles.Reservation}>
+      <div className='Reservation'>
         <TotalPrice data={data} guestsAdult={adultGuests} guestsChildren={childGuests}/>
         <Reviews data={data}/>
         <hr></hr>
@@ -88,7 +88,7 @@ class App extends React.Component {
         <Guests guestList={this.renderGuests.bind(this)} guestsAdult={adultGuests} guestsChildren={childGuests}/>
         <GuestList isClicked={this.state.guestList} guestList={this.renderGuests.bind(this)} changeGuests={this.changeGuests.bind(this)}/>
         <IndividualPrice data={data} guestsAdult={adultGuests} guestsChildren={childGuests} nights={this.state.nights}/>
-        <button className={styles.Book}>Book</button>
+        <button className='Book'>Book</button>
       </div>
     )
   }

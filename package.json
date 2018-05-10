@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node database/seed.js && nodemon server/server.js",
     "mongodb": "node database/seed.js",
     "test": "jest",
     "react": "webpack -d --watch"
@@ -17,6 +17,7 @@
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/react-fontawesome": "0.0.18",
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
@@ -31,7 +32,7 @@
     "react-dates": "^16.6.1",
     "react-dom": "^16.3.2",
     "react-star-ratings": "^2.2.0",
-    "react-with-styles": "^3.1.1"
+    "redis": "^2.8.0",
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",

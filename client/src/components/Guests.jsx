@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/Guests.css';
+import './styles/Guests.css';
 
 class Guests extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Guests extends React.Component {
           <span>Guests</span>
         </small>
         <div>
-          <button className={styles.Guests} onClick={this.props.guestList}><span>{this.state.totalGuests} guest{plural}</span></button>
+          <button className='Guests' onClick={this.props.guestList}><span>{this.state.totalGuests} guest{plural}</span></button>
         </div>
         <br></br>
       </div>
