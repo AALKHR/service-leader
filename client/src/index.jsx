@@ -94,4 +94,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App listing={5} />, document.getElementById('reservation'));
+ReactDOM.render(<App listing={window.location.href.split('?id=')[1] || 1} />, document.getElementById('reservation'));

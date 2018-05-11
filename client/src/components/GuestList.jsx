@@ -74,11 +74,14 @@ class GuestList extends React.Component {
     const hoverClose = this.state.isHovered ? 'onhover':'Close';
     if (this.props.isClicked) {
       return (
-        <div className='GuestList'>
-          <div>Adults<button className='button' onClick={this.addAdult}>+</button><span className='button'>&nbsp;{this.state.adults}&nbsp; </span> <button className='button' onClick={this.subtractAdult}>-</button></div>
-          <div>Children<button className='button' onClick={this.addChild}>+</button> <span className='button'>&nbsp;{this.state.children}&nbsp; </span> <button className='button' onClick={this.subtractChild}>-</button></div>
-          <div>Infants<button className='button' onClick={this.addInfant}>+</button> <span className='button'>&nbsp;{this.state.infants}&nbsp; </span> <button className='button' onClick={this.subtractInfant}>-</button></div>
-          <div><span className={hoverClose} onMouseEnter={this.hover.bind(this)} onMouseLeave={this.hover.bind(this)} onClick={this.onClick.bind(this)}>Close</span></div>
+        <div>
+          <div className='GuestList'>
+            <div>Adults<img className='plus button'src='https://image.flaticon.com/icons/svg/179/179402.svg' onClick={this.addAdult}></img><span className='guests button'>{this.state.adults}</span><img src='https://image.flaticon.com/icons/svg/179/179396.svg' className='minus button' onClick={this.subtractAdult}></img></div>
+            <div>Children<img className='plus button'src='https://image.flaticon.com/icons/svg/179/179402.svg' onClick={this.addChild}></img><span className='guests button'>{this.state.children}</span><img src='https://image.flaticon.com/icons/svg/179/179396.svg' className='minus button' onClick={this.subtractChild}></img></div>
+            <div>Infants<img className='plus button'src='https://image.flaticon.com/icons/svg/179/179402.svg' onClick={this.addInfant}></img><span className='guests button'>{this.state.infants}</span><img src='https://image.flaticon.com/icons/svg/179/179396.svg' className='minus button' onClick={this.subtractInfant}></img></div>
+            <div><span className={hoverClose} onMouseEnter={this.hover.bind(this)} onMouseLeave={this.hover.bind(this)} onClick={this.onClick.bind(this)}>Close</span></div>
+          </div>
+          <br></br>
         </div>
       )
     } else {
