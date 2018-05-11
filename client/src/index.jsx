@@ -32,7 +32,6 @@ class App extends React.Component {
     let current = this;
     axios.get(`http://127.0.0.1:3009/reservation/${listingNumber}`)
     .then((response) => {
-      console.log('Data received:', response.data);
       this.setState({ data: response.data});
     })
     .catch(error => console.log('Error:', error));
@@ -67,9 +66,8 @@ class App extends React.Component {
 
   dateRange(startDate, endDate) {
     if (startDate && endDate) {
-      let start = String(startDate._d).split(' ')[2]
-      let end = String(endDate._d).split(' ')[2]
-      this.setState({nights: end - start});
+      let totalNights = endDate.diff(startDate, 'days');
+      this.setState({nights: totalNights});
     } else {
       this.setState({nights: 0});
     }
@@ -94,4 +92,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App listing={window.location.href.split('?id=')[1] || 1} />, document.getElementById('reservation'));
+ReactDOM.render(<App listing={window.location.href.split('?id=')[1] || 13} />, document.getElementById('reservation'));
