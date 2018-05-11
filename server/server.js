@@ -4,7 +4,7 @@ const cors = require('cors');
 const Listing = require('../database/Listing.js');
 
 const app = express();
-const port = 3009;
+const port = process.env.PORT || 3009;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
